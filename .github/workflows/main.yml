@@ -38,7 +38,7 @@ jobs:
           sleep 10
   deploy:
     runs-on: self-hosted
-    needs: test
+    needs: build
     steps:
       - name: Run one-line script
         run: |
