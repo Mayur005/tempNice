@@ -13,24 +13,38 @@ on:
   workflow_dispatch:
 
 jobs:
-  job1:
+  build:
     runs-on: self-hosted
     steps:
       - name: Run one-line script
         run: |
           echo "build running"
-          sleep 30
+          sleep 10
       - name: Run third file
         run: |
           echo "build completed"
-          sleep 30
-  job2:
+          sleep 10
+  test:
     runs-on: self-hosted
+    needs: build
     steps:
       - name: Run one-line script
         run: |
           echo "Test running"
-          sleep 30
+          sleep 10
       - name: Run third file
         run: |
           echo "Test completed"
+          sleep 10
+  deploy:
+    runs-on: self-hosted
+    needs: test
+    steps:
+      - name: Run one-line script
+        run: |
+          echo "deploy running"
+          sleep 10
+      - name: Run third file
+        run: |
+          echo "deploy completed"          
+          sleep 10
