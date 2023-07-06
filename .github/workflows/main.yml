@@ -17,3 +17,9 @@ jobs:
         run: echo Hello, world
       - name: Run another line
         run: echo Hello world2 
+      - name: Run third file
+        run: |
+          touch mayur.txt
+          ls -l
+          sleep 10
+        
