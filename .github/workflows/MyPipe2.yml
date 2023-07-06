@@ -16,4 +16,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: First Run temp1 
+        run: echo "First run output"
+      - name: Second run
+        run: echo "Second run output"
